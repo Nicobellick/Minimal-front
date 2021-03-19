@@ -2,9 +2,13 @@ import './InterfaceAliments.css'
 import { Editor } from '@tinymce/tinymce-react'
 import { useState } from 'react'
 import ApiKey from './ApiKey'
+// import axios from 'axios'
 
 const InterfaceAliments = () => {
   const [text, setText] = useState(null)
+  // const send = () => {
+  //   axios.post('')
+  // }
   const handleEditorChange = e => {
     setText(e.target.getContent())
     console.log(text)
@@ -12,7 +16,7 @@ const InterfaceAliments = () => {
 
   return (
     <div className='interface-aliments'>
-      <div>
+      <div className='tiny'>
         <Editor
           apiKey={ApiKey}
           onChange={handleEditorChange}
@@ -37,6 +41,7 @@ const InterfaceAliments = () => {
         />
       </div>
       <p>{text}</p>
+      {/* <button>Ajouter</button> */}
     </div>
   )
 }

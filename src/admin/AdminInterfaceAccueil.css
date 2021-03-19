@@ -3,3 +3,8 @@
   background: #7D7777;
   height: 100vh;
 }
+.tiny {
+  margin-left: 40px;
+  margin-right: auto;
+  margin-top: 40px;
+}
