@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './DisplayRecipe.css'
 
 const DisplayRecipe = ({ id, name, personNb, cookTime, ingredients, step }) => {
   return (
     <Link to={`/recettes/${id}`}>
-      <div className='recipeCard'>
+      <div className='displayRecipeCard'>
         <div className='name'>{name}</div>
         <div className='person-nb'>{personNb}</div>
         <div className='cook-time'>{cookTime}</div>

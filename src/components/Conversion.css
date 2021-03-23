@@ -1,0 +1,23 @@
+.tableau-style{
+  border-collapse: collapse;
+  height: auto;
+  width: auto;
+  min-width: 400px;
+  box-shadow: 0 5px 50px rgba(0,0,0,0.15) ;
+  margin: 100px auto;
+}
+
+#entete{
+  background-color: lightblue;
+  border: 2px solid black;
+}
+
+.lignes{
+  background-color: lightgray;
+  border: 2px solid black;
+}
+td{
+  text-align: center;
+  min-width: 100px;
+  border: 1px solid black;
+}
