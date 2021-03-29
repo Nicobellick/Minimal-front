@@ -1,22 +1,35 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
-import DisplayRecipe from '../components/DisplayRecipe'
-import './Recipes.css'
+import './Aliments.css'
 
-const Recipes = () => {
+const Recipes = prevProps => {
   const [recipes, setRecipes] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
     axios
-      .get(`/api/aux_fourneaux/categorie_recettes/recettes/`)
+      .get(
+        `http://localhost:4242/api/aux_fourneaux/categorie_recettes/recettes=${prevProps.match.params.id}`
+      )
       .then(response => setRecipes(response.data))
+      .then(res => setIsLoading(true))
   }, [])
 
   return (
-    <div className='recipeCard'>
-      {recipes.map(recipe => (
-        <DisplayRecipe {...recipe} key={recipe.id} />
-      ))}
+    <div>
+      {isLoading ? (
+        <div className='all-aliments'>
+          {recipes.map(alim => (
+            <div className='card-ingredient'>
+              <h2 className='name-ingredient'>{alim.name}</h2>
+              <h3 className='title-ingredient'>{alim.title}</h3>
+              <p className='description-aliment'>{alim.content}</p>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div> En chargement </div>
+      )}
     </div>
   )
 }
