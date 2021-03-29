@@ -17,13 +17,11 @@ function App() {
       <Switch>
         <Route exact path='/' component={Home} />
         <Route path='/aux_fourneaux' component={AuxFourneaux} />
-        <Route path='/recettes' component={Recipes} />
-        <Route path='/recettes/:id' component={DetailRecipe} />
+
         <Route path='/admin'>
           <AdminInterfaceHome setDisplayHeader={setDisplayHeader} />
         </Route>
       </Switch>
-      <Conversion />
     </div>
   )
 }
